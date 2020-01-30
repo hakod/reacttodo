@@ -68,13 +68,24 @@ export default class ListItem extends Component {
         let dstyle = {
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'start',
+            borderBottom: '1px solid gray'
+        }
+        let p = {
+            display: 'block',
+            marginLeft: '0',
+            marginBottom: '.7em',
+            marginTop: '.7em',
+            marginRight: '0',
+            fontSize: '1em',
+            color: 'gray'
+
         }
         return (
             <div style={dstyle}>
                 <span onClick={this.toggle.bind(this)} style={style}></span>
                 {this.props.i.name && !this.state.edit?
-                <p onClick={this.edit.bind(this)}>{this.props.i.name}</p>:<input onChange={this.handleInput.bind(this)} onKeyDown={this.handleKey.bind(this)} onBlur={this.leave.bind(this)} autoFocus type='text' value={this.state.input}></input>}
+                <p style={p} onClick={this.edit.bind(this)}>{this.props.i.name}</p>:<input style={p} onChange={this.handleInput.bind(this)} onKeyDown={this.handleKey.bind(this)} onBlur={this.leave.bind(this)} autoFocus type='text' value={this.state.input}></input>}
             </div>
         )
     }

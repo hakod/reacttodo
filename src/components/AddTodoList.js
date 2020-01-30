@@ -19,10 +19,23 @@ export default class AddTodoList extends Component {
         })
     }
     render() {
+        let dstyle2 = {
+            width: '100%',
+            marginLeft: '30px',
+            marginBottom: '20px'
+        }
+        let style = {
+            backgroundColor: 'darkgray',
+            color: 'white',
+            border: 'none',
+            height: '35px',
+            width: '120px',
+            marginLeft: '30px'
+        }
         return (
-            <div>
-                <input type='text' onChange={this.handle.bind(this)} value={this.state.input} ></input>
-                <button onClick={this.addList.bind(this)}>Add a list</button>
+            <div style={dstyle2}>
+                <input placeholder='Add list' type='text' onChange={this.handle.bind(this)} value={this.state.input} ></input>
+                <button style={style} onClick={this.addList.bind(this)}>Add a list</button>
             </div>
         )
     }
